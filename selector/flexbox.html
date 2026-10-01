@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: sans-serif;
+            background-color: #f1f1f1;
+        }
+        .navbar{
+            display: flex;
+            align-items: center;
+            /* flex-direction: column; */
+            padding: 30px;
+            gap: 40px;
+            position: sticky;  
+            top: 0;
+            background-color: #f5fab9;
+            width: 100%;
+            /* justify-content: space-between; */
+        }
+        .navbar a{
+            text-decoration: none;
+            /* color:blue; */
+        }
+        .btn{
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: 70px;
+        }
+        .btn:hover{
+            background-color: #dff01e;
+        }
+        .content{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+        }
+        .content h5{
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>My Site</h1>
+        <!-- <div> -->
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">contact</a>
+            <a class="btn" href="#" >Logout</a>
+        <!-- </div> -->
+    </div>
+
+    <div id="content" class="content">
+        <h5>Welcome to our site!</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    
+</body>
+</html>
