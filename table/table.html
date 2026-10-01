@@ -30,11 +30,31 @@
             text-align: left;
             border-bottom: 1px solid #ddd;
             border-right: 1px solid #ddd;
+            
         }
         th{
             background-color: indianred;
             color: #fff;
+            text-align: center;
         }
+        .btn{
+            background-color: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .del{
+            background-color: #f44336;
+        }
+        .actions{
+            display: flex;
+            gap: 8px;          
+            align-items: center;
+        }
+  
+
     </style>
 </head>
 <body>
@@ -45,6 +65,7 @@
             <th>district</th>
             <th>phone number</th>
             <th>age</th>
+            <th>update</th>
         </tr>
         <tr>
             <td>1</td>
@@ -52,6 +73,10 @@
             <td>Kayonza</td>
             <td>079453452</td>
             <td>60</td>
+            <td class="actions">
+                <button class="edit btn">Edit</button>
+                <button class="del btn">Delete</button>
+            </td>
         </tr>
         <tr>
             <td>2</td>
@@ -59,6 +84,10 @@
             <td>Karongi</td>
             <td>079242552</td>
             <td>30</td>
+            <td class="actions">
+                <button class="edit btn">Edit</button>
+                <button class="del btn">Delete</button>
+            </td>
         </tr>
         <tr>
             <td>3</td>
@@ -66,6 +95,10 @@
             <td>Rusizi</td>
             <td>0792345452</td>
             <td>26</td>
+            <td class="actions">
+                <button class="edit btn">Edit</button>
+                <button class="del btn">Delete</button>
+            </td>  
         </tr>
         <tr>
             <td>4</td>
@@ -73,6 +106,10 @@
             <td>Kimihurura</td>
             <td>073453452</td>
             <td>50</td>
+            <td class="actions">
+                <button class="edit btn">Edit</button>
+                <button class="del btn">Delete</button>
+            </td>
         </tr>
         <tr>
             <td>5</td>
@@ -80,8 +117,11 @@
             <td>Kayonza</td>
             <td>079453452</td>
             <td>70</td>
+            <td class="actions">
+                <button class="edit btn">Edit</button>
+                <button class="del btn">Delete</button>
+            </td>
         </tr>
     </table>
-    
 </body>
 </html>
