@@ -1,0 +1,83 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, rgb(147, 147, 166), rgb(110, 110, 171), rgb(78, 78, 151));
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.formBox, .tableBox {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+.formBox { width: 400px; }
+.tableBox { width: 100%; max-width: 1000px; text-align: center; }
+
+h5 { font-size: 20px; margin-bottom: 5px; }
+p { line-height: 30px; }
+.error { color: crimson; }
+
+label { font-size: 14px; }
+input[type="text"], input[type="email"], select, input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0 12px;
+    border-radius: 6px;
+    border: 1px solid rgb(194, 193, 193);
+    background: rgb(240, 240, 243);
+}
+input:focus, select:focus { outline: none; border-color: rgb(110, 110, 163); box-shadow: 0 0 0 3px rgb(190, 180, 210); }
+input[readonly] { background: rgb(220, 220, 225); }
+
+input[type="submit"] {
+    background: rgb(45, 92, 130);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+input[type="submit"]:hover { background: rgb(88, 88, 131); }
+
+table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+th, td { padding: 10px; border-bottom: 1px solid rgb(210, 210, 215); text-align: left; }
+th { background: rgb(45, 92, 130); color: white; }
+a { color: rgb(45, 92, 130); }
+
+
+
+/* ---- Registered Students page (matches the exercise screenshot) ---- */
+.gradientBorder {
+    width: 100%;
+    max-width: 1000px;
+    padding: 8px;
+    border-radius: 12px;
+    background: linear-gradient(to right, orange, pink);
+}
+.gradientBorder .tableBox { max-width: none; border-radius: 8px; padding: 25px; }
+.tableBox h5 { text-align: center; font-size: 18px; margin-bottom: 15px; }
+.topBar { text-align: right; }
+.addBtn {
+    display: inline-block;
+    background: blue;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-decoration: none;
+}
+.tableBox th { background: rgb(235, 235, 235); color: black; text-align: center; font-size: 13px; }
+.tableBox td { text-align: center; font-size: 13px; }
+.btn {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    text-decoration: none;
+}
+.editBtn { background: green; color: white; }
+.delBtn { background: red; color: white; }
