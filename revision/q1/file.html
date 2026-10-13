@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Notification Panel</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #eef0f6;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+    }
+    #showBtn {
+        background: #1a73e8;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        transition: background 0.3s;
+    }
+    #showBtn:hover { background: #1558b0; }
+
+    /* Hidden state: invisible, moved up and slightly smaller */
+    .notification {
+        width: 90%;
+        max-width: 420px;
+        margin-top: 30px;
+        background: #e9f7ec;
+        border: 1px solid #b7dfc0;
+        border-radius: 8px;
+        padding: 18px 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-30px) scale(0.95);
+        transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+    }
+    /* Visible state */
+    .notification.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0) scale(1);
+    }
+    .title {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: #1b5e20;
+        font-weight: bold;
+        font-size: 15px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #cfe8d5;
+    }
+    .check {
+        width: 30px; height: 30px;
+        background: #2e9e4f;
+        color: white;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+    .text {
+        padding: 12px 0;
+        font-size: 13px;
+        color: #444;
+        border-bottom: 1px solid #cfe8d5;
+    }
+    .actions { text-align: center; padding-top: 12px; }
+    #dismissBtn {
+        background: #2e9e4f;
+        color: white;
+        border: none;
+        padding: 8px 22px;
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    #dismissBtn:hover { background: #237a3c; }
+</style>
+</head>
+<body>
+
+<button id="showBtn">Show Notification</button>
+
+<div class="notification" id="notification">
+    <div class="title">
+        <div class="check">&#10003;</div>
+        <span>Your registration has been completed successfully!</span>
+    </div>
+    <p class="text">Thank you for signing up. You can now log in to your account.</p>
+    <div class="actions">
+        <button id="dismissBtn">Dismiss</button>
+    </div>
+</div>
+
+<script>
+    var box = document.getElementById("notification");
+
+    document.getElementById("showBtn").addEventListener("click", function () {
+        box.classList.add("show");      // CSS transition animates it in
+    });
+
+    document.getElementById("dismissBtn").addEventListener("click", function () {
+        box.classList.remove("show");   // CSS transition animates it out
+    });
+</script>
+</body>
+</html>

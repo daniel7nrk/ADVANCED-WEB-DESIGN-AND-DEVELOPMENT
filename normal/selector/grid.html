@@ -19,13 +19,32 @@
             justify-content: center;
 
         }
-        #gridcontainer{
-            display: grid;
-            grid-template-columns: repeat(3,300px);
-            gap: 10px;
+        @media(max-width: 480px){
+            #gridcontainer{
+                display: grid;
+                grid-template-columns: repeat(1,300px);
+                gap: 10px;
+            }
+
+
         }
+        @media(min-width: 481px) and (max-width: 768px){
+            #gridcontainer{
+                display: grid;
+                grid-template-columns: repeat(2,300px);
+                gap: 10px;
+            }
+        }
+        @media(min-width: 769px){
+            #gridcontainer{
+                display: grid;
+                grid-template-columns: repeat(3,300px);
+                gap: 10px;
+            }
+        }
+        
         #box{
-            background-color:rgb(172, 236, 174);
+            background-color:rgb(212, 223, 213);
             padding: 60px;
             border-radius: 15px;
             text-align: center;

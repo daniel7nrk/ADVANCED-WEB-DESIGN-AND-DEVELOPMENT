@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+  <h1>what is the dimesion of the rectangle</h1> 
+  <p>age</p><input type="number">
+  <p>country</p><input type="string"><br> 
+  <button onclick="ageCalc()">Answer</button> 
+  <p id="answer"></p> 
+
+    <h1>what what your Marks</h1> 
+    <p>Marks</p><input type="number">
+    <p id="answer2"></p>
+    <button onclick="marksCalc()">Answer</button> 
+
+</body> 
+
+<script> 
+function ageCalc(){ 
+    let age = document.querySelectorAll("input")[0].value; 
+    let country = document.querySelectorAll("input")[1].value;
+    let res = (age > 18) ? `you can vote man` : `How are you doing kid`; 
+    
+    let outp = document.getElementById("answer"); 
+    outp.innerText = (country === "Rwanda") ? res : `who are you`; 
+} 
+
+function marksCalc(){ 
+    let marks = document.querySelectorAll("input")[2].value; 
+    let res = (marks > 90)? `you got Grade A` :
+              (marks > 80)? `you got Grade B` : 
+              (marks > 70)? `you got Grade C` : 
+              (marks > 60)? `you got Grade D` : `you failed`; 
+    document.getElementById("answer2").innerText = res; 
+}
+</script>
+
+</html>

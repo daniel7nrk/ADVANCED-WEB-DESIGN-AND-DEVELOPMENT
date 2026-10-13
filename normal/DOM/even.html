@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+
+            font-family: Arial, sans-serif;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            margin: 30px auto;
+            background: linear-gradient(to bottom, rgb(232, 217, 245), rgb(196, 243, 133), rgb(248, 232, 13));
+            
+            
+
+        }
+        .showbox{
+
+            opacity: 0;
+            background-color: #c51414;
+            color: white;
+            padding: 40px 20px;
+            margin: 40px auto;
+            border-radius: 8px;
+            text-align: center;
+            height: 100px;
+            width: 200px;
+            justify-content: center;
+            transform: translateY(-30);
+            transition: 0.8s;
+        }
+        .showbox.show{
+
+            opacity: 1;
+            transform: translateY(-30);
+            transition: 0.8s;
+            
+        }
+    </style>
+</head>
+<body>
+    <button onclick="document.getElementById('box').classList.add('show');">
+        SHOW
+    </button>
+
+    <div class="showbox" id="box">
+
+        <p> CLICK TO HIDE AND SHOW </p>
+
+    </div>
+
+    <button onclick="document.getElementById('box').classList.remove('show');">
+        HIDE
+    </button>
+
+
+</body>
+</html>

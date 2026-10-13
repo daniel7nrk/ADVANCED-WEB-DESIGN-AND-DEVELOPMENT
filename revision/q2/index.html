@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Question 2 - Project Dashboard</title>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, Helvetica, sans-serif; background: #f4f5f7; padding: 30px; }
+    h1 { color: #333; margin-bottom: 20px; }
+    .tabs { display: flex; gap: 10px; }
+    .tab {
+        padding: 8px 18px; border: none; border-radius: 4px;
+        background: #e3e6ea; cursor: pointer; font-size: 14px;
+        transition: background 0.3s, color 0.3s;
+    }
+    .tab:hover { background: #17a2b8; color: white; }
+
+    /* Overlay */
+    .overlay {
+        position: fixed; inset: 0;
+        background: rgba(0,0,0,0.6);
+        display: flex; align-items: center; justify-content: center;
+        opacity: 0; visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+        padding: 15px;
+    }
+    .overlay.open { opacity: 1; visibility: visible; }
+
+    /* Modal */
+    .modal {
+        background: white; width: 100%; max-width: 480px;
+        border-radius: 6px; overflow: hidden;
+        transform: translateY(-30px);
+        transition: transform 0.3s;
+    }
+    .overlay.open .modal { transform: translateY(0); }
+    .modal-header {
+        background: #343a40; color: white; text-align: center;
+        padding: 12px; font-weight: bold; position: relative;
+    }
+    .x { position: absolute; right: 14px; top: 8px; cursor: pointer; font-size: 20px; }
+    .modal-body { padding: 12px; max-height: 70vh; overflow-y: auto; }
+
+    /* Task cards */
+    .task {
+        display: flex; align-items: center; gap: 14px;
+        border: 1px solid #ddd; border-radius: 5px;
+        padding: 10px; margin-bottom: 10px; background: white;
+        transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    }
+    .task:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,0.15); border-color: #17a2b8; }
+    .icon {
+        width: 48px; height: 48px; border-radius: 6px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 26px; flex-shrink: 0;
+    }
+    .info h4 { font-size: 14px; font-weight: bold; color: #222; }
+    .info .project { font-size: 12px; color: #888; margin: 2px 0; }
+    .info .due { font-size: 12px; color: #444; }
+
+    .modal-footer { text-align: center; padding: 10px; border-top: 1px solid #eee; }
+    #closeBtn {
+        padding: 6px 28px; border: 1px solid #ccc; background: #f0f0f0;
+        border-radius: 4px; cursor: pointer; transition: background 0.3s;
+    }
+    #closeBtn:hover { background: #dcdcdc; }
+</style>
+</head>
+<body>
+
+<h1>Project Dashboard</h1>
+<div class="tabs">
+    <button class="tab">All</button>
+    <button class="tab">To Do</button>
+    <button class="tab" id="inProgressBtn">In Progress</button>
+    <button class="tab">Completed</button>
+</div>
+
+<!-- Modal -->
+<div class="overlay" id="overlay">
+    <div class="modal">
+        <div class="modal-header">In Progress Tasks <span class="x" id="xBtn">x</span></div>
+        <div class="modal-body">
+            <div class="task">
+                <div class="icon" style="background:#d6e9f8;">🎨</div>
+                <div class="info"><h4>Design New Homepage</h4><p class="project">Project Alpha</p><p class="due">Due: May 25, 2024</p></div>
+            </div>
+            <div class="task">
+                <div class="icon" style="background:#d4f1e4;">📱</div>
+                <div class="info"><h4>Develop Mobile App</h4><p class="project">Project Beta</p><p class="due">Due: May 28, 2024</p></div>
+            </div>
+            <div class="task">
+                <div class="icon" style="background:#fde8d0;">📝</div>
+                <div class="info"><h4>Write Blog Content</h4><p class="project">Project Gamma</p><p class="due">Due: May 30, 2024</p></div>
+            </div>
+            <div class="task">
+                <div class="icon" style="background:#e8dcf7;">📈</div>
+                <div class="info"><h4>Update Marketing Plan</h4><p class="project">Project Delta</p><p class="due">Due: June 2, 2024</p></div>
+            </div>
+            <div class="task">
+                <div class="icon" style="background:#fbdcdc;">🛒</div>
+                <div class="info"><h4>Test E-commerce Site</h4><p class="project">Project Omega</p><p class="due">Due: June 5, 2024</p></div>
+            </div>
+        </div>
+        <div class="modal-footer"><button id="closeBtn">Close</button></div>
+    </div>
+</div>
+
+<script>
+    var overlay = document.getElementById("overlay");
+
+    // Open modal when "In Progress" is clicked
+    document.getElementById("inProgressBtn").addEventListener("click", function () {
+        overlay.classList.add("open");
+    });
+
+    // Close modal with the Close button, the X, or by clicking outside the modal
+    document.getElementById("closeBtn").addEventListener("click", function () {
+        overlay.classList.remove("open");
+    });
+    document.getElementById("xBtn").addEventListener("click", function () {
+        overlay.classList.remove("open");
+    });
+    overlay.addEventListener("click", function (e) {
+        if (e.target === overlay) overlay.classList.remove("open");
+    });
+</script>
+</body>
+</html>

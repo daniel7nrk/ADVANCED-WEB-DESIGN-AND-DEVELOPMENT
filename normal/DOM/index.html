@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3 class="text"></h3>
+    <div style="display: flex; gap: 5px;">
+    <div class="box" style="width: 300px; background-color: black; color: white; height: 300px; display: flex; text-align: center;  align-items: center; border-radius: 10px;  justify-content: center;">box 1</div>
+    <div class="box" style="width: 300px; background-color: black; color: white; height: 300px; display: flex; text-align: center;  align-items: center; border-radius: 10px;  justify-content: center;">box 2</div>
+    <div class="box" style="width: 300px; background-color: black; color: white; height: 300px; display: flex; text-align: center;  align-items: center; border-radius: 10px;  justify-content: center;">box 3</div>
+    </div>
+
+
+    <button>click me</button>
+    
+    
+</body>
+<script>
+    const text = document.getElementsByClassName('text')[0];
+    text.innerHTML = 'dom is the document object model used to  access the element (node) in the html document               ';
+
+    const button = document.querySelector('button');
+    const box = document.getElementById('box')
+    let click = 0
+    button.addEventListener('click', () => {
+        
+        if(click%2===0){
+            box.style.width= '300px';
+            box.style.width= '300px';
+            box.style.backgroundColor= 'green'; 
+            box.style.color= 'black'; 
+            box.style.display = 'flex'; 
+            box.style.textAlign= 'center';  
+            box.style.alignItems= 'center'; 
+            box.style.justifyContent= 'center'
+            box.style.borderRadius = '20px'
+        }else{
+            box.style.width= '300px';
+            box.style.height= '300px';
+            box.style.backgroundColor= 'red'; 
+            box.style.color= 'white'; 
+            box.style.display = 'flex'; 
+            box.style.textAlign= 'center';  
+            box.style.alignItems= 'center'; 
+            box.style.justifyContent= 'center'
+            box.style.borderRadius = '100px'
+          
+        }
+        click++
+    })
+
+</script>
+</html>
