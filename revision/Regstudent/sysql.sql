@@ -1,7 +1,7 @@
 
-mysql -u root
+-- mysql -u root
 
-CREATE DATABASE school_dbs;
+-- CREATE DATABASE school_dbs;
 USE school_dbs;
 CREATE TABLE students (
     Reg_No    VARCHAR(20)  NOT NULL PRIMARY KEY,

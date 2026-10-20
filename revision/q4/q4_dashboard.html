@@ -3,64 +3,172 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Question 4 - KVMM School Management Dashboard</title>
+<title>KVMM School Management Dashboard</title>
 <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Arial, Helvetica, sans-serif; background: #f2f4f7; padding: 30px 15px; }
-    h1 { text-align: center; color: #222; margin-bottom: 30px; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+        font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: #f1f5f9;
+        color: #1e293b;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        font-size: 28px;
+        color: #0f172a;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        margin-bottom: 8px;
+    }
+
+    p.subtitle {
+        color: #64748b;
+        font-size: 15px;
+    }
 
     /* 6-column grid: each card spans 2 columns -> 3 per row */
     .dashboard {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        gap: 20px;
-        max-width: 800px;
+        gap: 24px;
+        max-width: 860px;
         margin: 0 auto;
+        width: 100%;
     }
+
     .card {
         grid-column: span 2;
-        background: white;
-        border: 1px solid #ccc;
-        border-radius: 12px;
-        padding: 25px 10px;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 32px 20px;
         text-align: center;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
+
     /* Second row: center the 2 remaining cards */
     .card:nth-child(4) { grid-column: 2 / span 2; }
     .card:nth-child(5) { grid-column: 4 / span 2; }
 
     .card:hover {
         transform: translateY(-6px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        border-color: #1a8ca8;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        border-color: #6366f1;
     }
-    .card .icon { font-size: 52px; margin-bottom: 10px; }
-    .card h3 { font-size: 18px; color: #222; font-weight: normal; }
+
+    .card .icon-container {
+        width: 64px;
+        height: 64px;
+        background: #eef2ff;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 16px;
+        transition: background-color 0.3s;
+    }
+
+    .card:hover .icon-container {
+        background: #6366f1;
+    }
+
+    .card svg {
+        width: 32px;
+        height: 32px;
+        stroke: #6366f1;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: stroke 0.3s;
+    }
+
+    .card:hover svg {
+        stroke: #ffffff;
+    }
+
+    .card h3 {
+        font-size: 16px;
+        color: #334155;
+        font-weight: 600;
+        letter-spacing: -0.2px;
+    }
 
     /* Tablet: 2 per row */
     @media (max-width: 768px) {
-        .dashboard { grid-template-columns: repeat(2, 1fr); }
+        .dashboard { grid-template-columns: repeat(2, 1fr); max-width: 500px; }
         .card, .card:nth-child(4), .card:nth-child(5) { grid-column: auto; }
     }
+
     /* Phone: 1 per row */
     @media (max-width: 480px) {
-        .dashboard { grid-template-columns: 1fr; }
+        .dashboard { grid-template-columns: 1fr; max-width: 320px; }
     }
 </style>
 </head>
 <body>
 
-<h1>KVMM School Management Dashboard</h1>
+<header>
+    <h1>KVMM School Management</h1>
+    <p class="subtitle">Welcome back, please select a module to manage</p>
+</header>
 
 <div class="dashboard">
-    <div class="card"><div class="icon">&#128101;</div><h3>Students</h3></div>
-    <div class="card"><div class="icon">&#128218;</div><h3>Modules</h3></div>
-    <div class="card"><div class="icon">&#127891;</div><h3>Marks</h3></div>
-    <div class="card"><div class="icon">&#128226;</div><h3>Announcements</h3></div>
-    <div class="card"><div class="icon">&#9881;&#65039;</div><h3>Settings</h3></div>
+    <!-- Students -->
+    <div class="card">
+        <div class="icon-container">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <h3>Students</h3>
+    </div>
+
+    <!-- Modules -->
+    <div class="card">
+        <div class="icon-container">
+            <svg viewBox="0 0 24 24"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+        </div>
+        <h3>Modules</h3>
+    </div>
+
+    <!-- Marks -->
+    <div class="card">
+        <div class="icon-container">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+        </div>
+        <h3>Marks</h3>
+    </div>
+
+    <!-- Announcements -->
+    <div class="card">
+        <div class="icon-container">
+            <svg viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"></path><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg>
+        </div>
+        <h3>Announcements</h3>
+    </div>
+
+    <!-- Settings -->
+    <div class="card">
+        <div class="icon-container">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        </div>
+        <h3>Settings</h3>
+    </div>
 </div>
 
 </body>

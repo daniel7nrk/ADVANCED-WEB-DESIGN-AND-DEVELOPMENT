@@ -1,0 +1,70 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fb;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.header {
+  background: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 22px 16px;
+}
+.header h1 { margin: 0; font-size: 1.6rem; }
+
+/* Panels laid out horizontally across the centre */
+.panels {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 24px 16px;
+  flex-wrap: wrap;
+}
+
+.panel {
+  background: #fff;
+  width: 250px;
+  padding: 24px 16px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+.panel-title { margin: 0 0 8px; font-weight: bold; }
+.panel-subtitle { margin: 0 0 18px; font-size: 0.85rem; color: #555; }
+
+.go-btn {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.go-btn:hover { background: #0056b3; }
+
+/* Footer */
+.footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 18px 16px;
+  font-size: 0.85rem;
+}
+.footer p { margin: 0; }
+
+/* Responsive: stack panels on small screens */
+@media (max-width: 600px) {
+  .panel { width: 100%; max-width: 320px; }
+}

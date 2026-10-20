@@ -1,0 +1,47 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; background: #f4f6f8; color: #1f2933; }
+a { color: #1d4ed8; }
+
+.topbar { background: #1e3a5f; color: #fff; display: flex; justify-content: space-between;
+          align-items: center; padding: 12px 24px; flex-wrap: wrap; gap: 8px; }
+.topbar h1 { font-size: 1.2rem; margin: 0; }
+.topbar nav { display: flex; align-items: center; gap: 16px; }
+.topbar nav a { color: #fff; text-decoration: none; }
+.topbar nav a:hover { text-decoration: underline; }
+
+.container { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+.container.narrow { max-width: 480px; }
+
+.cards { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
+.card { flex: 1 1 220px; background: #fff; padding: 20px; border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0,0,0,.12); text-decoration: none; color: inherit; }
+.card:hover { box-shadow: 0 3px 10px rgba(0,0,0,.18); }
+
+form label { display: block; margin: 12px 0 4px; font-weight: 600; }
+form input { width: 100%; padding: 9px; border: 1px solid #c5ccd3; border-radius: 6px; font-size: 1rem; }
+form.inline { display: inline; }
+
+.btn { display: inline-block; margin-top: 16px; padding: 9px 18px; background: #1d4ed8; color: #fff;
+       border: 0; border-radius: 6px; cursor: pointer; font-size: .95rem; text-decoration: none; }
+.btn:hover { background: #1e40af; }
+.btn-sm { margin-top: 0; padding: 5px 10px; font-size: .85rem; }
+.btn-danger { background: #c62828; }
+.btn-danger:hover { background: #a71d1d; }
+.btn-light { margin-top: 0; background: #fff; color: #1e3a5f; }
+.btn-light:hover { background: #e2e8f0; }
+
+.table-wrap { overflow-x: auto; background: #fff; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e9ee; white-space: nowrap; }
+th { background: #eef2f7; }
+
+.msg { padding: 10px 12px; border-radius: 6px; }
+.msg.success { background: #e3f6e8; color: #1b5e20; }
+.msg.error { background: #fdeaea; color: #b71c1c; }
+
+.auth-page { display: flex; min-height: 100vh; align-items: center; justify-content: center; }
+.auth-card { background: #fff; width: 100%; max-width: 380px; padding: 28px; border-radius: 10px;
+             box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+.auth-card h2 { margin-top: 0; }
+.auth-card .btn { width: 100%; }
+.small { font-size: .9rem; margin-bottom: 0; }

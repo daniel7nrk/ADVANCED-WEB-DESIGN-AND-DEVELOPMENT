@@ -1,5 +1,5 @@
 <?php
-// ---------- PHP: receive the form and calculate ----------
+
 $showResult = false;
 $error = "";
 
